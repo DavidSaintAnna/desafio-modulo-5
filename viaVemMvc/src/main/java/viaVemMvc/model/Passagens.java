@@ -32,9 +32,11 @@ public class Passagens {
 	@Column(nullable=false)
 	@DateTimeFormat(iso = ISO.DATE, pattern = "yyyy-MM-dd")
 	private Date dataDeRetorno;
+	@Column(nullable=false)
+	private float preco;
 	
 	public Passagens(int id, Aeroportos aeroporto, String nome, Date dataDeChegada, Date dataDeSaida,
-			Date dataDeRetorno) {
+			Date dataDeRetorno, float preco) {
 		super();
 		this.id = id;
 		this.aeroporto = aeroporto;
@@ -42,6 +44,7 @@ public class Passagens {
 		this.dataDeChegada = dataDeChegada;
 		this.dataDeSaida = dataDeSaida;
 		this.dataDeRetorno = dataDeRetorno;
+		this.preco = preco;
 	}
 	public Passagens() {
 		super();
@@ -81,6 +84,12 @@ public class Passagens {
 	}
 	public void setDatadeRetorno(Date dataDeRetorno) {
 		this.dataDeRetorno = dataDeRetorno;
+	}
+	public float getPreco() {
+		return preco;
+	}
+	public void setPreco(float preco) {
+		this.preco = preco;
 	}
 	
 
