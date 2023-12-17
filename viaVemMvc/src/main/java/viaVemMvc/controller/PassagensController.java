@@ -41,4 +41,21 @@ public class PassagensController {
 
         return "redirect:/passagens";
     }
+    @GetMapping("/{id}/atualizar")
+    public ModelAndView atualizarForm(@PathVariable int id) {
+        ModelAndView modelAndView = new ModelAndView("views/passagens/update.html");
+        Passagens passagem = passagensRepository.findById(id).orElse(null);
+        
+        modelAndView.addObject("passagem", passagem);
+
+        return modelAndView;
+    }
+
+    @PostMapping("/{id}/atualizar")
+    public String atualizar(@PathVariable int id, @ModelAttribute("passagem") Passagens passagem) {
+        passagem.setId(id); // Set ID to ensure the correct entity is updated
+        passagensRepository.save(passagem);
+
+        return "redirect:/passagens";
+    }
 }

@@ -41,4 +41,22 @@ public class UsuariosController {
 
         return "redirect:/usuarios";
     }
+    @GetMapping("/{id}/atualizar")
+    public ModelAndView atualizarForm(@PathVariable int id) {
+        ModelAndView modelAndView = new ModelAndView("views/usuarios/update.html");
+        Usuarios usuario = usuariosRepository.findById(id).orElse(null);
+        
+        modelAndView.addObject("usuario", usuario);
+
+        return modelAndView;
+    }
+
+    @PostMapping("/{id}/atualizar")
+    public String atualizar(@PathVariable int id, @ModelAttribute("usuario") Usuarios usuario) {
+        usuario.setId(id); // Set ID to ensure the correct entity is updated
+        usuariosRepository.save(usuario);
+
+        return "redirect:/usuarios";
+    }
+    
 }

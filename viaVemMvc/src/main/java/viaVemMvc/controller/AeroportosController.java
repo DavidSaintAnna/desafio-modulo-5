@@ -41,4 +41,30 @@ public class AeroportosController {
 
         return "redirect:/aeroportos";
     }
+
+@GetMapping("/{id}/atualizar")
+public ModelAndView mostrarAtualizarForm(@PathVariable int id) {
+    ModelAndView modelAndView = new ModelAndView("views/aeroportos/atualizar.html");
+    Aeroportos aeroporto = aeroportosRepository.findById(id).orElse(null);
+
+    modelAndView.addObject("aeroporto", aeroporto);
+
+    return modelAndView;
+}
+
+@PostMapping("/{id}/atualizar")
+public String atualizarAeroporto(@PathVariable int id, @ModelAttribute("aeroporto") Aeroportos aeroporto) {
+    Aeroportos existingAeroporto = aeroportosRepository.findById(id).orElse(null);
+
+    if (existingAeroporto != null) {
+        existingAeroporto.setNome(aeroporto.getNome());
+        existingAeroporto.setCidade(aeroporto.getCidade());
+        existingAeroporto.setPais(aeroporto.getPais());
+
+        aeroportosRepository.save(existingAeroporto);
+    }
+
+    return "redirect:/aeroportos";
+}
+    
 }
