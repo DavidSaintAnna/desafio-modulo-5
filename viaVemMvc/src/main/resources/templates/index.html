@@ -33,14 +33,24 @@ DOCTYPE html>
     <link
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap"
       rel="stylesheet"
+    />	
+   <link
+      rel="stylesheet"
+      href="../static/assets/css/stylee.css"
+      th:href="@{assets/css/stylee.css}"
     />
-    <link rel="stylesheet" href="./css/stylee.css" />
     <title>ViaVem</title>
   </head>
   <body>
     <header class="header">
       <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container">
+		 <img
+              src="./assets/images/image 8.svg"
+              class="logo"
+              alt="logo"
+              th:src="@{assets/images/image 8.svg}"
+            />
           <a class="navbar-brand" href="#">
             <span class="text-success">Via</span>Vem
           </a>
