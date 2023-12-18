@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<!-- Your existing head content -->
+</head>
+
+<body>
+	<main>
+		<header class="header">
+			<h1><span><i class="ri-book-2-line"></i></span>Booki</h1>
+		</header>
+
+		<ul class="nav justify-content-center">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="">Home</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/aeroportos}">Aeroportos</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/passagens}">Passagens</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" th:href="@{/usuarios}">Usuarios</a>
+			</li>
+		</ul>
+
+	</main>
+
+	<footer>
+		<img src="./assets/img/recode.svg" alt="recodePro" />
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>
