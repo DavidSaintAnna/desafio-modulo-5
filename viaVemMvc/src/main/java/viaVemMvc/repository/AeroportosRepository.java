@@ -6,5 +6,5 @@ import viaVemMvc.model.Aeroportos;
 
 
 public interface AeroportosRepository extends JpaRepository<Aeroportos, Integer> {
-    
-}
+	    
+	}

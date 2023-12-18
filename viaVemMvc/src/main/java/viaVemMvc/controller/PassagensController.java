@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
+
+import viaVemMvc.model.Aeroportos;
 import viaVemMvc.model.Passagens;
+import viaVemMvc.repository.AeroportosRepository;
 import viaVemMvc.repository.PassagensRepository;
 
 @Controller
@@ -28,13 +32,14 @@ public class PassagensController {
         return modelAndView;
     }
 
+  
     @PostMapping("/cadastrar")
     public String cadastrar(@ModelAttribute("passagem") Passagens passagem) {
         passagensRepository.save(passagem);
 
         return "redirect:/passagens";
     }
-
+    
     @GetMapping("/{id}/excluir")
     public String excluir(@PathVariable int id) {
         passagensRepository.deleteById(id);
