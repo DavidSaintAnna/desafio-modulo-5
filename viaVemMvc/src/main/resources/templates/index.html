@@ -34,7 +34,7 @@ DOCTYPE html>
       href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/stylee.css" />
     <title>ViaVem</title>
   </head>
   <body>
@@ -42,7 +42,6 @@ DOCTYPE html>
       <nav class="navbar navbar-expand-lg bg-light fixed-top">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="./images/image 8.svg" class="logo" alt="logo" />
             <span class="text-success">Via</span>Vem
           </a>
           <button
@@ -113,9 +112,10 @@ DOCTYPE html>
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img
-              src="./images/have-cameras-will-travel.jpg"
+              src="../static/assets/images/have-cameras-will-travel.jpg"
               class="d-block w-100"
               alt="cameras"
+              th:src="@{assets/images/have-cameras-will-travel.jpg}"
             />
             <div class="carousel-caption">
               <p class="text-bg-success">A sua viagem!</p>
@@ -123,9 +123,10 @@ DOCTYPE html>
           </div>
           <div class="carousel-item">
             <img
-              src="./images/antique-binoculars-and-map.jpg"
+              src="../static/assets/images/antique-binoculars-and-map.jpg"
               class="d-block w-100"
               alt="..."
+              th:src="@{assets/images/antique-binoculars-and-map.jpg}"
             />
             <div class="carousel-caption">
               <p class="text-bg-success">As melhores ofertas!</p>
@@ -133,9 +134,10 @@ DOCTYPE html>
           </div>
           <div class="carousel-item">
             <img
-              src="./images/travel-written-in-sand.jpg"
+              src="../static/assets/images/travel-written-in-sand.jpg"
               class="d-block w-100"
               alt="..."
+              th:src="@{assets/images/travel-written-in-sand.jpg}"
             />
           </div>
         </div>
@@ -166,9 +168,10 @@ DOCTYPE html>
             <div class="col-lg-4 col-md-12 col-12 bg">
               <div class="about-img">
                 <img
-                  src="./images/rolling-suitcase-into-hotel.jpg"
+                  src="./assets/images/rolling-suitcase-into-hotel.jpg"
                   alt="travel"
                   class="img-fluid"
+                  th:src="@{assets/images/rolling-suitcase-into-hotel.jpg}"
                 />
               </div>
             </div>
@@ -225,5 +228,4 @@ DOCTYPE html>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   </body>
 </html>
-
 

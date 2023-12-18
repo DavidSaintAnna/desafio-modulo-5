@@ -73,6 +73,7 @@ public class Passagens {
 	public void setDatadeChegada(Date dataDeChegada) {
 		this.dataDeChegada = dataDeChegada;
 	}
+	
 	public Date getDatadeSaida() {
 		return dataDeSaida;
 	}
