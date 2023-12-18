@@ -21,12 +21,15 @@ public class PassagensController {
 
     @Autowired
     private PassagensRepository passagensRepository;
+    @Autowired
+	private AeroportosRepository aeroportoRepository; 
 
     @GetMapping
     public ModelAndView passagens() {
         ModelAndView modelAndView = new ModelAndView("views/passagens/index.html");
         
         modelAndView.addObject("passagens", passagensRepository.findAll());
+        modelAndView.addObject("listaAeroportos", aeroportoRepository.findAll());
         modelAndView.addObject("passagem", new Passagens());
 
         return modelAndView;
@@ -34,7 +37,9 @@ public class PassagensController {
 
   
     @PostMapping("/cadastrar")
-    public String cadastrar(@ModelAttribute("passagem") Passagens passagem) {
+    public String cadastrar(@ModelAttribute("passagem") Passagens passagem, @RequestParam("aeroporto_id") int aeroporto_id) {
+    	 Aeroportos selectedAeroporto = aeroportoRepository.findById(aeroporto_id).orElse(null);
+    	    passagem.setAeroporto(selectedAeroporto);
         passagensRepository.save(passagem);
 
         return "redirect:/passagens";
