@@ -46,6 +46,7 @@
 							<th scope="col">Nome</th>
 							<th scope="col">Email</th>
 							<th scope="col">Senha</th>
+							<th scope="col">Ações</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -156,6 +157,11 @@
 				                </label>
 				                <input type="text" id="senha" name="senha" class="form-control" value="" />
 				            </div>
+				    <select id="passagem" name="passagem_id" class="form-control" required>
+        <option value="">Choose a Ticket</option>
+        <!-- Loop through your list of Passagens and populate options -->
+        <option th:each="passagem : ${passagensList}" th:value="${passagem.id}" th:text="${passagem.nome}"></option>
+    </select>
 				            <button type="submit" class="btn btn-primary">
 				                Enviar
 				            </button>
